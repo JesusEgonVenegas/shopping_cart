@@ -1,0 +1,6 @@
+.homepage {
+  background:
+    linear-gradient(to top, black, rgba(0, 0, 0, 0.6)),
+    url("../assets/homebg.jpg") no-repeat center center fixed;
+  height: 90vh;
+}
