@@ -4,7 +4,7 @@ const Card = ({ category, desc, id, img, price, title, rating, setCart }) => {
   const [count, setCount] = useState(1);
   const handleAddCart = (e) => {
     e.preventDefault();
-    setCart((prev) => prev + 1);
+    setCart((prev) => prev + parseInt(count));
   };
   return (
     <div className="card">
