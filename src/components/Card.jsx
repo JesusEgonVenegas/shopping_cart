@@ -1,11 +1,25 @@
 import { useState } from "react";
 import "./Card.css";
-const Card = ({ category, desc, id, img, price, title, rating, setCart }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../features/cart/cartSlice";
+const Card = ({ category, desc, id, img, price, title, rating }) => {
   const [count, setCount] = useState(1);
   const handleAddCart = (e) => {
     e.preventDefault();
-    setCart((prev) => prev + parseInt(count));
+    dispatch(
+      addItem({
+        id: id,
+        title: title,
+        img: img,
+        desc: desc,
+        count: parseInt(count),
+        price: price,
+      }),
+    );
   };
+
+  const dispatch = useDispatch();
+
   return (
     <div className="card">
       <div>

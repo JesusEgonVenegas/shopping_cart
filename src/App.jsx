@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
@@ -6,14 +5,13 @@ import Shop from "./components/Shop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [cart, setCart] = useState(0);
   return (
     <Router>
-      <Navbar cart={cart} />
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop setCart={setCart} />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       </main>
     </Router>

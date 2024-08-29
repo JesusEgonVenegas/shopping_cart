@@ -1,0 +1,16 @@
+.cart-item {
+  display: flex;
+  place-items: center;
+  gap: 10px;
+}
+
+.cart-item img {
+  width: 10%;
+  height: 10%;
+}
+
+.cart-item-name {
+}
+
+.cart-item-count {
+}
