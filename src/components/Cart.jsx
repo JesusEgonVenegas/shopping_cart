@@ -27,7 +27,7 @@ const Cart = () => {
         <div className="cart-modal" ref={cartDialog}>
           <ul>
             {Object.keys(cart).map((item, idx) => (
-              <li key={idx}>
+              <li key={cart[item].id}>
                 <CartItem item={cart[item]} />
               </li>
             ))}
