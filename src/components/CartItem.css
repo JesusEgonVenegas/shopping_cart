@@ -14,3 +14,12 @@
 
 .cart-item-count {
 }
+
+.full-width {
+  width: 100%;
+}
+
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}

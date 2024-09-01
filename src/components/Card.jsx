@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./Card.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItem } from "../features/cart/cartSlice";
+import { USDollar } from "../util";
 const Card = ({ category, desc, id, img, price, title, rating }) => {
   const [count, setCount] = useState(1);
+  const dispatch = useDispatch();
   const handleAddCart = (e) => {
     e.preventDefault();
     dispatch(
@@ -18,8 +20,6 @@ const Card = ({ category, desc, id, img, price, title, rating }) => {
     );
   };
 
-  const dispatch = useDispatch();
-
   return (
     <div className="card">
       <div>
@@ -27,7 +27,7 @@ const Card = ({ category, desc, id, img, price, title, rating }) => {
         <h3>{title}</h3>
       </div>
       <p>{desc}</p>
-      <p>${price}</p>
+      <p>{USDollar.format(price)}</p>
       <form onSubmit={handleAddCart}>
         <input
           type="number"
