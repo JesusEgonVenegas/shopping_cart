@@ -18,7 +18,7 @@ describe('cart', () => {
     const cartButton = screen.getByText('cart')
     await userEvent.click(cartButton)
     expect(screen.getByText('Total')).toBeInTheDocument()
-    await store.dispatch(addItem({id: 1,
+    await store.dispatch(addItem({id: 2,
         title: "Title",
         img: null,
         desc: "Description",
@@ -26,7 +26,7 @@ describe('cart', () => {
         price: 44}))
     expect(screen.getByText('Title')).toBeInTheDocument()
     expect(screen.getByDisplayValue('5')).toBeInTheDocument()
-    await store.dispatch(addItem({id: 2,
+    await store.dispatch(addItem({id: 1,
         title: "Title 2",
         img: null,
         desc: "Description",
